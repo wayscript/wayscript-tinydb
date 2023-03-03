@@ -1,0 +1,1 @@
+# Wayscript TinyDB Template
