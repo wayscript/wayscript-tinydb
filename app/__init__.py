@@ -12,7 +12,7 @@ def create_app(db=TinyDBManager()):
         title="TinyDB API",
         description="A simple TinyDB API",
     )
-    ns = api.namespace("document", description="Document operations")
+    ns = api.namespace("documents", description="Document operations")
 
     documentModel = api.model(
         "Document",
@@ -39,7 +39,7 @@ def create_app(db=TinyDBManager()):
     def handle_not_found_exception(e):
         return {"message": "Resource not found"}, 404
 
-    @ns.route("s/")
+    @ns.route("/")
     class DocumentList(Resource):
         @ns.doc("list_documents")
         @ns.response(200, "Success", [documentModel])
