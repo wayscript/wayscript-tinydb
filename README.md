@@ -6,7 +6,7 @@ A simple [TinyDB](https://tinydb.readthedocs.io/en/latest/) API Lair template th
 
 To start using this API -
 
-1. Create a new Lair with this file as a template
+1. Create a new WayScript Lair from this template
 2. Deploy lair by running the pre-configured deploy trigger
 
-You can checkout the available API endpoints by visiting the [base endpoint](https://docs.wayscript.com/platform/lairs/endpoints) of your deployed Lair.
+You can checkout the available API endpoints by visiting the [default endpoint](https://docs.wayscript.com/platform/lairs/endpoints) of your deployed Lair.

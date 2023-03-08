@@ -45,7 +45,6 @@ def create_app(db=TinyDBManager()):
         @ns.response(200, "Success", [documentModel])
         def get(self):
             """List all documents"""
-            print(db.getAll()[0]["data"]["type"])
             return db.getAll()
 
         @ns.doc("create_document")
