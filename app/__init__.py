@@ -26,17 +26,17 @@ def create_app(db=TinyDBManager()):
         },
     )
 
-    @ns.errorhandler(TinyDBDocumentNotFoundException)
+    @app.errorhandler(TinyDBDocumentNotFoundException)
     def handle_no_doc_found_exception(error):
         """Return a custom not found error message and 404 status code"""
-        return {"message": "document not found"}, 400
+        return {"message": "document not found"}, 404
 
     @ns.errorhandler(werkzeug.exceptions.BadRequest)
-    def handle_not_found_exception(error):
+    def handle_bad_request(error):
         return {"message": error.description}, 400
 
     @app.errorhandler(werkzeug.exceptions.NotFound)
-    def handle_bad_request(e):
+    def handle_not_found_exception(e):
         return {"message": "Resource not found"}, 404
 
     @ns.route("s/")
@@ -64,7 +64,7 @@ def create_app(db=TinyDBManager()):
                 )
 
     @ns.route("/<int:id>")
-    @ns.response(400, "Document not found")
+    @ns.response(404, "Document not found")
     @ns.param("id", "The document id")
     class Document(Resource):
         """Show a single todo item and lets you delete them"""
