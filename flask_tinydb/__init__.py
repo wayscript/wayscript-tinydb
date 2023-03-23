@@ -67,8 +67,6 @@ def create_app(db=TinyDBManager()):
     @ns.response(404, "Document not found")
     @ns.param("id", "The document id")
     class Document(Resource):
-        """Show a single todo item and lets you delete them"""
-
         @ns.doc("get_doc")
         @ns.response(200, "Success", documentModel)
         def get(self, id):
