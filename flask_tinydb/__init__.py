@@ -96,7 +96,7 @@ def create_app(db=TinyDBManager()):
             db.update(id, request.json["data"])
             return "", 201
 
-    @ns.route("s/query")
+    @ns.route("/query")
     class DocumentQuery(Resource):
         @ns.param("value", "The value to be searched for", "query")
         @ns.param("field", "The document field to be searched against", "query")
