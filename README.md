@@ -1,3 +1,5 @@
+[![img](https://github.com/wayscript/wsx-docs/raw/master/.gitbook/assets/deploy.png)](https://app.wayscript.com/deploy/?githubUrl=https://github.com/wayscript/wayscript-tinydb)
+
 # TinyDB API Lair template
 
 A simple [TinyDB](https://tinydb.readthedocs.io/en/latest/) API Lair template that can be used to provision databases quickly.
